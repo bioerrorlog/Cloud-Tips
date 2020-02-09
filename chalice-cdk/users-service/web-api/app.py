@@ -2,12 +2,16 @@ import os
 import boto3
 from chalice import Chalice
 
+# アプリケーションオブジェクト作成
 app = Chalice(app_name='web-api')
 
+# DynamoDBの取得
 dynamodb = boto3.resource('dynamodb')
 dynamodb_table = dynamodb.Table(os.environ['DYNAMODB_TABLE_NAME'])
 
 
+# 以下、エンドポイントの設定
+# @app.routeに渡した情報がAPI Gatewayに設定される
 @app.route('/users', methods=['POST'])
 def create_user():
     user = app.current_request.json_body

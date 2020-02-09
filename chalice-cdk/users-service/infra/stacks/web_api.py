@@ -12,7 +12,8 @@ class WebApi(cdk.Stack):
 
     def __init__(self, scope: cdk.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
-
+        
+        # DynamoDBの作成
         partition_key = dynamodb.Attribute(name='username',
                                            type=dynamodb.AttributeType.STRING)
         self.dynamodb_table = dynamodb.Table(
@@ -21,19 +22,26 @@ class WebApi(cdk.Stack):
         cdk.CfnOutput(self, 'UsersTableName', value=self.dynamodb_table.table_name)
 
 
+        # LambdaがDynamoDBにアクセスするためのIAMロールを作成
         lambda_service_principal = iam.ServicePrincipal('lambda.amazonaws.com')
         self.api_handler_iam_role = iam.Role(self, 'ApiHandlerLambdaRole',
                                              assumed_by=lambda_service_principal)
         self.dynamodb_table.grant_read_write_data(self.api_handler_iam_role)
 
+
+        # web_api_source_dirはChaliceアプリケーションソースコードへのパス
+        # ソースコードはcdk-chalice(ここでは`Chalice`としてimport)によってパッケージングされ、
+        # SAMテンプレートの作成とLambdaデプロイのためのZIP化が行われる
         web_api_source_dir = os.path.join(os.path.dirname(__file__), os.pardir,
                                           os.pardir, 'web-api')
         chalice_stage_config = self._create_chalice_stage_config()
-
+        
+        # Chaliceインスタンスの作成
         self.chalice = Chalice(
             self, 'WebApi', source_dir=web_api_source_dir,
             stage_config=chalice_stage_config)
 
+    # Chalice Stagesを定義
     def _create_chalice_stage_config(self):
         chalice_stage_config = {
             'api_gateway_stage': 'v1',
