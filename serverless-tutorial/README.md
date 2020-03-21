@@ -6,5 +6,8 @@ https://www.bioerrorlog.work/entry/aws-serverless-tutorial
 
 <br>
 
-# Architecture
+## Architecture
 ![architecture](images/architecture.png)
+
+## Reference
+https://aws.amazon.com/getting-started/projects/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/
