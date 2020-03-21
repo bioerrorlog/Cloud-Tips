@@ -2,5 +2,9 @@
 
 Cloud tech tips / architecture examples
 
-Blog(日本語):  
-https://www.bioerrorlog.work/archive/category/%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89
+## Contents
+- [Architecture_examples](https://github.com/bioerrorlog/Cloud-Tips/tree/master/Architecture_examples)
+  - [Centralized_Logging_Biogen](https://github.com/bioerrorlog/Cloud-Tips/tree/master/Architecture_examples/Centralized_Logging_Biogen)
+  - [Deploy_Pipeline_NextGen](https://github.com/bioerrorlog/Cloud-Tips/tree/master/Architecture_examples/Deploy_Pipeline_NextGen)
+- [chalice-cdk](https://github.com/bioerrorlog/Cloud-Tips/tree/master/chalice-cdk)
+- [serverless-tutorial](https://github.com/bioerrorlog/Cloud-Tips/tree/master/serverless-tutorial)
