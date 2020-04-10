@@ -1,6 +1,6 @@
 # Cloud Tips
 
-Cloud tech tips / architecture examples
+Cloud tech tips / examples
 
 ## Contents
 - [Architecture_examples](https://github.com/bioerrorlog/Cloud-Tips/tree/master/Architecture_examples)
