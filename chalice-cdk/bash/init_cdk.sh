@@ -14,9 +14,9 @@ rm -rf infra
 rm setup.py
 
 # 必要なツールをrequirements.txtに放り込んでインストール
-echo "aws_cdk.aws_dynamodb==1.19.0" > requirements.txt
-echo "aws_cdk.core==1.23.0" >> requirements.txt
-echo "cdk-chalice==0.4.0" >> requirements.txt
+echo "aws-cdk.aws-dynamodb" > requirements.txt
+echo "aws-cdk.core" >> requirements.txt
+echo "cdk-chalice==0.6.0" >> requirements.txt # 現時点でのlatest version: 0.7.0ではインストールに失敗した
 pip install -r requirements.txt
 
 # 新規のstacksパッケージを作成

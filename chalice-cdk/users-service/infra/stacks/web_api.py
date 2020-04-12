@@ -30,13 +30,13 @@ class WebApi(cdk.Stack):
 
 
         # web_api_source_dirはChaliceアプリケーションソースコードへのパス
-        # ソースコードはcdk-chalice(ここでは`Chalice`としてimport)によってパッケージングされ、
+        # ソースコードはChaliceによってパッケージングされ、
         # SAMテンプレートの作成とLambdaデプロイのためのZIP化が行われる
         web_api_source_dir = os.path.join(os.path.dirname(__file__), os.pardir,
                                           os.pardir, 'web-api')
         chalice_stage_config = self._create_chalice_stage_config()
         
-        # Chaliceインスタンスの作成
+        # Chalice作成
         self.chalice = Chalice(
             self, 'WebApi', source_dir=web_api_source_dir,
             stage_config=chalice_stage_config)

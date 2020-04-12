@@ -12,11 +12,11 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # Chaliceインストールとプロジェクトの作成
-pip install chalice==1.12.0
+pip install chalice
 chalice new-project web-api
 cd web-api
 
 # 必要なツールをrequirements.txtに放り込んでインストール
-echo "boto3==1.10.30" > requirements.txt
-echo "chalice==1.12.0" >> requirements.txt
+echo "boto3" > requirements.txt
+echo "chalice" >> requirements.txt
 pip install -r requirements.txt
