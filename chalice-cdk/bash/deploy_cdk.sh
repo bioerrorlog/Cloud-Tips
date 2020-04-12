@@ -9,8 +9,8 @@ cdk deploy WebApiDev
 $ curl \
     -H "Content-Type: application/json" \
     -X POST \
-    -d '{"username":"john", "email":"john@example.com"}' \
-    https://n6doqg3ewl.execute-api.eu-west-1.amazonaws.com/v1/users
+    -d '{"username":"bioerrorlog", "email":"bioerrorlog@example.com"}' \
+    https://0oexyzw39c.execute-api.ap-northeast-1.amazonaws.com/v1/users
 
 # クリーンアップ
 cdk destroy WebApiDev

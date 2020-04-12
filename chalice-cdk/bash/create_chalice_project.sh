@@ -8,7 +8,7 @@ mkdir users-service
 cd users-service
 
 # Python仮想環境の作成とアクティブ化
-python3 -m venv .venv
+python3.7 -m venv .venv # Python3.7で実行する
 source .venv/bin/activate
 
 # Chaliceインストールとプロジェクトの作成
